@@ -51,7 +51,7 @@ void inserirLista(Nodo **listaTotal){
 		
 		Nodo *nodoAtual = *listaTotal;
 		//INSERIR NA PRIMEIRA POSIÇÃO
-		if((novo->info)<= (nodoAtual->info)){
+		if((novo->info) <= (nodoAtual->info)){
 			nodoAtual->prev = novo;
 			novo->next = nodoAtual;
 			novo->prev = NULL;
