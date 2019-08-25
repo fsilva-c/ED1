@@ -22,8 +22,6 @@ listaPaises *criarElemento(char nomePais[50], int codPais);
 void encadear_listaPaises(listaPaises **listaTotal_Paises, listaPaises *elementoPaises);
 void listarPaises(listaPaises *listaTotal);
 
-void listarClientes
-
 int main(){
 	listaPaises *listaTotal_Paises = NULL;
 	
