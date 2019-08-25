@@ -3,7 +3,7 @@
 #include <string.h>
 
 //a estrutura de clientes ira apontar para a estrutura paises
-//lista deve ser criada previamente, em tempo de compilação 
+//lista deve ser criada previamente, em tempo de compilaÃ§Ã£o 
 
 typedef struct listaPaises{
 	char nome[30];
@@ -15,6 +15,7 @@ typedef struct listaClientes{
 	char nome[50];
 	int codPlano;
 	struct listaClientes *next;
+	struct listaClientes *pais;
 }listaClientes;
 
 listaPaises *criarElemento(char nomePais[50], int codPais);
