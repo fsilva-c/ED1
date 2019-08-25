@@ -9,13 +9,13 @@ typedef struct listaPaises{
 	char nome[30];
 	int cod;
 	struct listaPaises *next;
+	struct listaClientes *cliente;
 }listaPaises;
 
 typedef struct listaClientes{
 	char nome[50];
 	int codPlano;
 	struct listaClientes *next;
-	struct listaClientes *pais;
 }listaClientes;
 
 listaPaises *criarElemento(char nomePais[50], int codPais);
@@ -49,6 +49,7 @@ listaPaises *criarElemento(char nomePais[50], int codPais){
 	novo->cod = codPais;
 	strcpy(novo->nome, nomePais);
 	novo->next = NULL;
+	novo->cliente = NULL;
 }//FIM function
 
 void encadear_listaPaises(listaPaises **listaTotal_Paises, listaPaises *elementoPaises){
