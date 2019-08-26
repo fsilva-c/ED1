@@ -15,6 +15,7 @@ typedef struct listaPaises{
 typedef struct listaClientes{
 	char nome[50];
 	int codPlano;
+//add tipo cliente(decidido ou indeciso)
 	struct listaClientes *next;
 }listaClientes;
 
