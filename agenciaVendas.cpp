@@ -5,6 +5,14 @@
 //a estrutura de clientes ira apontar para a estrutura paises
 //lista deve ser criada previamente, em tempo de compilação 
 
+/*
+Russia 3
+Espanha 5
+Italia 7
+Grecia 9
+Alemanha 11
+*/
+
 typedef struct listaPaises{
 	char nome[30];
 	int cod;
@@ -15,30 +23,19 @@ typedef struct listaPaises{
 typedef struct listaClientes{
 	char nome[50];
 	int codPlano;
-//add tipo cliente(decidido ou indeciso)
 	struct listaClientes *next;
 }listaClientes;
 
 listaPaises *criarElemento(char nomePais[50], int codPais);
 void encadear_listaPaises(listaPaises **listaTotal_Paises, listaPaises *elementoPaises);
+void gerar_ListaPaiseslista(listaPaises **listaTotal_Paises);
 void listarPaises(listaPaises *listaTotal);
 
 int main(){
 	listaPaises *listaTotal_Paises = NULL;
 	
-	listaPaises *paisRussia = criarElemento("Russia", 1);
-	encadear_listaPaises(&listaTotal_Paises, paisRussia);
-	
-	listaPaises *paisEspanha = criarElemento("Espanha", 2);
-	encadear_listaPaises(&listaTotal_Paises, paisEspanha);
-	
-	listaPaises *paisItalia = criarElemento("Italia", 3);
-	encadear_listaPaises(&listaTotal_Paises, paisItalia);
-	
-	listaPaises *paisGrecia = criarElemento("Grecia", 4);
-	encadear_listaPaises(&listaTotal_Paises, paisGrecia);
+	gerar_ListaPaiseslista(&listaTotal_Paises);
 	listarPaises(listaTotal_Paises);
-	
 }//FIM main
 
 listaPaises *criarElemento(char nomePais[50], int codPais){
@@ -60,14 +57,20 @@ void encadear_listaPaises(listaPaises **listaTotal_Paises, listaPaises *elemento
 	}
 }//FIM function
 
+void gerar_ListaPaiseslista(listaPaises **listaTotal_Paises){
+	FILE *ptrArquivo = fopen("perguntas_Paises.txt", "r");
+	if(ptrArquivo == NULL) exit(EXIT_FAILURE);
+	
+	unsigned short codPais;
+	char nomePais[50] = {'\0'};
+	while(fscanf(ptrArquivo, "%s %d", nomePais, &codPais) != EOF){
+		listaPaises *elemento = criarElemento(nomePais, codPais);
+		encadear_listaPaises(listaTotal_Paises, elemento);
+	}
+	fsclose(ptrArquivo);
+}//FIM function
+
 void listarPaises(listaPaises *listaTotal_Paises){
 	for(listaPaises *nodoAux = listaTotal_Paises; nodoAux != NULL; nodoAux = nodoAux->next)
 	printf("%s ", nodoAux->nome);
 }//FIM function
-
-
-
-
-
-
-
