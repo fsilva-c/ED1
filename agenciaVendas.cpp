@@ -6,37 +6,37 @@
 //lista deve ser criada previamente, em tempo de compilação 
 
 /*
-pergunta1 60
-pergunta2 50
-pergunta3 70
-pergunta4 40
-pergunta5 56
-pergunta6 66
-pergunta7 80
-pergunta8 30
-pergunta9 46
-pergunta10 54
-pergunta11 58
-pergunta12 64
-pergunta13 68
-pergunta14 76
-pergunta15 90
-paisA 29
-paisB 33
-paisC 45
-paisD 49
-paisE 53
-paisF 55
-paisG 57
-paisH 59
-paisI 63
-paisJ 65
-paisK 67
-paisL 69
-paisM 75
-paisN 79
-paisO 89
-paisP 101
+60 pergunta1 60
+50 pergunta2 50
+70 Testanto a pergunta com espacos entre as palavras
+40 pergunta4 40
+56 pergunta5 56
+66 pergunta6 66
+80 pergunta7 80
+30 pergunta8 30
+46 pergunta9 46
+54 pergunta10 54
+58 pergunta11 58
+64 pergunta12 64
+68 pergunta13 68
+76 pergunta14 76
+90 Voce gosta de flores?
+29 paisA
+33 paisB
+45 paisC
+49 paisD
+53 paisE
+55 paisF
+47 paisG
+59 paisH
+63 paisI
+65 paisJ
+67 paisK
+69 paisL
+75 paisM
+79 paisN
+89 paisO
+101 paisP
 */
 
 typedef struct listaPaises{
