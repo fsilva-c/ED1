@@ -69,6 +69,7 @@ void retirarFila(Nodo **inicioFila, Nodo **fimFila){
 	printf("Elemento removido: [%d]\n", elementoAux->info);
 	free(elementoAux);
 }
+
 void listarFila(Nodo *inicioFila){
 	
 	if(inicioFila == NULL){
