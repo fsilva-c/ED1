@@ -5,40 +5,6 @@
 //a estrutura de clientes ira apontar para a estrutura paises
 //lista deve ser criada previamente, em tempo de compilação 
 
-/*
-pergunta1 60
-pergunta2 50
-pergunta3 70
-pergunta4 40
-pergunta5 56
-pergunta6 66
-pergunta7 80
-pergunta8 30
-pergunta9 46
-pergunta10 54
-pergunta11 58
-pergunta12 64
-pergunta13 68
-pergunta14 76
-pergunta15 90
-paisA 29
-paisB 33
-paisC 45
-paisD 49
-paisE 53
-paisF 55
-paisG 57
-paisH 59
-paisI 63
-paisJ 65
-paisK 67
-paisL 69
-paisM 75
-paisN 79
-paisO 89
-paisP 101
-*/
-
 typedef struct listaPaises{
 	char nome[30];
 	int cod;
@@ -305,24 +271,9 @@ void encadearClientes(listaPaises **listaTotal_Paises, listaClientes cliente, in
 }
 
 int escolherDestino(int opInf){
-	short codPais = 0;
-	if(opInf == 1) codPais = 91;
-	else if(opInf == 2) codPais = 89;
-	else if(opInf == 3) codPais = 77;
-	else if(opInf == 4) codPais = 75;
-	else if(opInf == 5) codPais = 69;
-	else if(opInf == 6) codPais = 67;
-	else if(opInf == 7) codPais = 65;
-	else if(opInf == 8) codPais = 63; 
-	else if(opInf == 9) codPais = 59; 
-	else if(opInf == 10) codPais = 57; 
-	else if(opInf == 11) codPais = 55; 
-	else if(opInf == 12) codPais = 53; 
-	else if(opInf == 13) codPais = 47; 
-	else if(opInf == 14) codPais = 45; 
-	else if(opInf == 15) codPais = 31; 
-	else if(opInf == 16) codPais = 29; 
-	return codPais;
+    int codPais[16] = {91, 89, 77, 75, 69, 67, 65, 63, 59, 57, 55, 53, 47, 45, 31, 29};
+    
+    return codPais[opInf - 1];
 }//FIM function
 
 void listarEstrutura(listaPaises *listaTotal_Paises){
